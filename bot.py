@@ -43,6 +43,14 @@ async def ezra(ctx):
 @bot.command()
 async def Jdog(ctx):
     await ctx.send(file=discord.File("j-dog.jpg"))  # You wrote .png but posted .jpg
+@bot.command()
+@commands.has_permissions(administrator=True)
+async def text(ctx, user: discord.Member, *, message):
+    try:
+        await user.send(message)
+        await ctx.send(f"✅ Message sent to {user.name}!")
+    except discord.Forbidden:
+        await ctx.send("❌ I can't send a DM to this user. They might have DMs disabled.")
 
 # Start the bot using the token from .env or environment variable
 bot.run(os.environ['TOKEN'])
