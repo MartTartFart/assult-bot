@@ -16,6 +16,9 @@ bot = commands.Bot(command_prefix='!', intents=intents)
 
 # Bot startup message
 @bot.event
+async def help():
+    print(f"Commands List:\n\t!assult\n\t!nuke\n\t!ezra\n\t!text\n\t!Jdog")
+    
 async def on_ready():
     print(f"✅ Logged in as {bot.user}")
 
