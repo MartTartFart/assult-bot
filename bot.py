@@ -1,53 +1,52 @@
 import discord
 import asyncio
+import os
 from discord.ext import commands
+from dotenv import load_dotenv
 
+# Load .env variables (only needed if you're using a .env file locally)
+load_dotenv()
 
+# Enable message content intent
 intents = discord.Intents.default()
 intents.message_content = True
 
+# Create bot instance
 bot = commands.Bot(command_prefix='!', intents=intents)
 
-@bot.event  
-
+# Bot startup message
+@bot.event
 async def on_ready():
-    print(f"Logged in as {bot.user}")
+    print(f"✅ Logged in as {bot.user}")
 
+# !assult command - tag someone 40 times (admin only)
 @bot.command()
 @commands.has_permissions(administrator=True)
-#async = it tells python this function will do some things that takes time, so dont block the whole program, (asynchronous) do this while doing other things too dont block the whole ts program
-#ctx = an object that holds information about how and where a command was called (context)
-#await = wait until this task is finished before moving onto the next line of code ts
+async def assult(ctx, user: discord.Member, *, message='assulted'):
+    for i in range(40):
+        await ctx.send(f"{user.mention} {message}")
+        await asyncio.sleep(1)  # Wait 1 second between messages
 
-async def assult(ctx, user: discord.Member,*,message='assulted'):
-    if ctx.author.guild_permissions.administrator:
-        for i in range(40):
-            await ctx.send(f"{user.mention} {message}")
-    else:
-        await ctx.send(f"{ctx.author.mention} you do not have perms lil nga")
-  # Wait for 1 second before sending the next message
+# !nuke command - @everyone spam (admin only)
 @bot.command()
-async def nuke(ctx,message):
-    if ctx.author.guild_permissions.administrator:
-        for i in range(15):
-            await ctx.send(f"@everyone  {message}")
-            asyncio.sleep(2)
-    else:
-        await ctx.send(f"{ctx.author.mention} you do not have perms lil nga")
+@commands.has_permissions(administrator=True)
+async def nuke(ctx, *, message):
+    for i in range(15):
+        await ctx.send(f"@everyone {message}")
+        await asyncio.sleep(2)  # You forgot to "await" before asyncio.sleep()
 
+# Image commands
 @bot.command()
 async def ezra(ctx):
     await ctx.send(file=discord.File("ezrah.png"))
 
 @bot.command()
 async def Jdog(ctx):
-    await ctx.send(file=discord.File("j-dog.png"))
+    await ctx.send(file=discord.File("j-dog.jpg"))  # You wrote .png but posted .jpg
 
 @bot.command()
 async def ethan(ctx):
     await ctx.send(file=discord.File("ethan.gif"))
-    
 
-
-
-bot.run('MTM3MjAxMDA3MjIwODgzNDYxMA.GnQYtd.99OVgeuCYkPV7RAq7kgPz0iMa-qFZS7A_1OElE')
+# Start the bot using the token from .env or environment variable
+bot.run(os.environ['TOKEN'])
