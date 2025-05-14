@@ -50,4 +50,4 @@ async def ethan(ctx):
 
 
 
-bot.run('MTM3MjAxMDA3MjIwODgzNDYxMA.GyhP48.Pf6nCb7DFmGLnOcaupF5kfZqlaPk91_-1dVZwc')
+bot.run('MTM3MjAxMDA3MjIwODgzNDYxMA.GnQYtd.99OVgeuCYkPV7RAq7kgPz0iMa-qFZS7A_1OElE')
