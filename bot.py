@@ -30,10 +30,10 @@ async def assult(ctx, user: discord.Member, *, message='assulted'):
 # !nuke command - @everyone spam (admin only)
 @bot.command()
 @commands.has_permissions(administrator=True)
-async def nuke(ctx, *, message):
+async def nuke(ctx, *, message='boom type shit'):
     for i in range(15):
         await ctx.send(f"@everyone {message}")
-        await asyncio.sleep(2)  # You forgot to "await" before asyncio.sleep()
+        await asyncio.sleep(1)  # You forgot to "await" before asyncio.sleep()
 
 # Image commands
 @bot.command()
@@ -43,10 +43,6 @@ async def ezra(ctx):
 @bot.command()
 async def Jdog(ctx):
     await ctx.send(file=discord.File("j-dog.jpg"))  # You wrote .png but posted .jpg
-
-@bot.command()
-async def ethan(ctx):
-    await ctx.send(file=discord.File("ethan.gif"))
 
 # Start the bot using the token from .env or environment variable
 bot.run(os.environ['TOKEN'])
