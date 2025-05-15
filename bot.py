@@ -148,6 +148,13 @@ async def humbleHim(ctx, user: discord.Member):
         f"{random.choice(packgodVerses)}\n"
         f"{random.choice(packgodVerses)}"
     )
+async def bully(ctx):
+    victim_choice = random.choice([member.mention for member in ctx.guild.members if not member.bot])
+    disrespects = ['get a job','PLEASE GET A JOB', 'why do you look like that','holy shit it smells like ass around this fn'
+                          ,'leave bro. Nobody wants you here','kys','all mans rape ts individual','I detest you','clean my shoes lil bro','kys kys kys kys',
+                          'SYBAU', 'gurt']
+    diss = random.choice(disrespects)
+    await ctx.send(f"{victim_choice} {diss}")
 
 # Run the bot using your token
 bot.run(os.environ['TOKEN'])
