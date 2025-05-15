@@ -140,7 +140,7 @@ async def humbleHim(ctx, user: discord.Member):
         "Your breath smells like a used gym sock soaked in Monster energy.",
         "You look like you got ratio’d by your own shadow.",
         "You're the type of guy to clap when the plane lands and choke on the air.",
-        "fuck you bro stfu"
+        "fuck you bro stfu",
     ]
     await ctx.send(
         f"yo {user.mention},\n"
@@ -153,7 +153,7 @@ async def bully(ctx):
     victim_choice = random.choice([member.mention for member in ctx.guild.members if not member.bot])
     disrespects = ['get a job','PLEASE GET A JOB', 'why do you look like that','holy shit it smells like ass around this fn'
                           ,'leave bro. Nobody wants you here','kys','all mans rape ts individual','I detest you','clean my shoes lil bro','kys kys kys kys',
-                          'SYBAU', 'gurt']
+                          'SYBAU', 'gurt',]
     diss = random.choice(disrespects)
     await ctx.send(f"{victim_choice} {diss}")
 
