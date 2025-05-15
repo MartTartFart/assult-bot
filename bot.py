@@ -75,19 +75,29 @@ async def askPackgod(ctx, *, message):
     else:
         await ctx.send(file=discord.File("packgod.jpg"))
         responses = [
-            'yes', 'no', 'nah', 'FUT NO', 'dumbass question, sybau',
-            'js kys', '100%', 'ask me some stupid shit like that again I dare you',
-            'im gonna assault you for asking that', 'mmmmmaybe',
-            'idk bro im packgod',
-            'keep talking ur gonna get packed',
-            'absofuckinglutley',
-            'HELL NO GTFO',
-            'kys',
-            'fuck you ezra',
-            'yeah',
-            'ima keep it a gurt I dont GAF',
-            'bro i dont care js stfu',
-            'kys'
+        # Direct yes/no answers with flair
+            "yeah", "nah", "no 💀", "yes 💯", "absolutely", "absofuckinglutely", "100% yes",
+            "nah fam", "hell no", "hell yeah", "definitely not", "without a doubt", "not a chance",
+            "bro yes wtf", "bro no tf", "you already know the answer is yes", "it’s a no from me dawg",
+            "yeah but I ain’t proud of it", "no and you knew that asking it", "yes — unfortunately",
+            "yes, but delete this question after", "no — and don't ask that goofy shit again",
+        
+            # Disrespectful/roast versions
+            "ask me that dumb shit again, I dare you",
+            "I should pack you for even asking",
+            "kys", "bro kys", "shut the hell up", "you built like that question",
+            "idk bro, go cry to your diary", "goofy ass question fr",
+            "js stfu", "I ain’t even answering that", "you need help fr",
+            "fuck you and your question", "you get a pack just for asking that 💀",
+            "damn you really typed that huh", "ur brain buffering or smth?",
+            "ask again and I’m telling your mom", "you just embarrassed yourself ngl",
+            "bro asked like that was smart", "that question got me reconsidering AI rights",
+            "next question before I leave", "go play in traffic respectfully",
+        
+            # Troll-style in-between or evasive
+            "mmmmaybe", "depends if you got Wi-Fi", "idk I’m lagging", "🤓 maybe", "try again later nerd",
+            "ain’t no way you typed that", "ask someone who cares", "coin flip says yes",
+            "I’m ignoring that", "404 answer not found", "your question expired mid-air"
         ]
         await ctx.send(random.choice(responses))
 
@@ -109,7 +119,28 @@ async def humbleHim(ctx, user: discord.Member):
         "You got roasted so bad, your mirror submitted a resignation letter.",
         "You're like an unskippable ad with attitude — no one likes you and you don’t shut up.",
         "You dress like your wardrobe was sponsored by '404 Error: Style Not Found.'",
-        "You're so irrelevant, even your shadow unfollowed you."
+        "You're so irrelevant, even your shadow unfollowed you.",
+        "You built like a rejected Snapchat filter with zero friends and negative Riz.",
+        "Your existence is proof that God sometimes trolls for fun.",
+        "You look like the final boss of social awkwardness.",
+        "You're so dumb, you tried to climb a fish tank because you heard there were 'streams' inside.",
+        "You got cooked so hard last time, your ancestors filed a restraining order.",
+        "You’re the reason shampoo bottles have instructions.",
+        "You sound like a Walmart intercom glitching during a power outage.",
+        "You’re built like a Wi-Fi signal with commitment issues — always dropping when it matters.",
+        "Your face looks like a failed captcha test.",
+        "You got banned from a Discord call for lagging in real life.",
+        "Your DNA test came back as ‘404: Personality Not Found.’",
+        "You're the reason group chats go silent.",
+        "Your whole aesthetic screams 'bootleg NPC that spawns once and breaks the game.'",
+        "Your parents high-fived when you moved out — with both hands.",
+        "You laugh like a squeaky dog toy getting tortured in a microwave.",
+        "You're so irrelevant, even ChatGPT pretends it doesn't know you.",
+        "You dress like a side quest nobody finishes.",
+        "Your breath smells like a used gym sock soaked in Monster energy.",
+        "You look like you got ratio’d by your own shadow.",
+        "You're the type of guy to clap when the plane lands and choke on the air.",
+        "fuck you bro stfu"
     ]
     await ctx.send(
         f"yo {user.mention},\n"
