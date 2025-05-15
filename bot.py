@@ -148,6 +148,7 @@ async def humbleHim(ctx, user: discord.Member):
         f"{random.choice(packgodVerses)}\n"
         f"{random.choice(packgodVerses)}"
     )
+@bot.command()
 async def bully(ctx):
     victim_choice = random.choice([member.mention for member in ctx.guild.members if not member.bot])
     disrespects = ['get a job','PLEASE GET A JOB', 'why do you look like that','holy shit it smells like ass around this fn'
