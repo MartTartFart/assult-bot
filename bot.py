@@ -73,13 +73,50 @@ async def askPackgod(ctx, *, message):
     if not message.strip():
         await ctx.send("you need to ask a question bru")
     else:
+        ctx.send(file=discord.File('packgod.jpg')
         responses = [
             'yes', 'no', 'nah', 'FUT NO', 'dumbass question, sybau',
             'js kys', '100%', 'ask me some stupid shit like that again I dare you',
             'im gonna assault you for asking that', 'mmmmmaybe',
-            'idk bro im packgod'
+            'idk bro im packgod',
+            'keep talking ur gonna get packed',
+            'absofuckinglutley',
+            'HELL NO GTFO',
+            'kys',
+            'fuck you ezra',
+            'yeah',
+            'ima keep it a gurt I dont GAF',
+            'bro i dont care js stfu',
+            'kys'
         ]
         await ctx.send(random.choice(responses))
+
+@bot.command()
+async def humbleHim(ctx, user: discord.Member):
+    ctx.send(file=discord.File('packgod.jpg')
+    packgodVerses = [
+        "Boy, you built like a failed iOS update — laggy, slow, and nobody wants you!",
+        "You talk tough but stutter like your Wi-Fi on 1 bar — sit down, packet loss!",
+        "You look like you scream at Fortnite when the microwave turns on.",
+        "How you built like a Minecraft villager but talk like you dropped outta Roblox High?",
+        "Your drip so dry it evaporates on sight — you look like a sponsored drought!",
+        "You walk into a room and the lights turn off out of disrespect.",
+        "You built like the loading screen of a 2006 Dell — outdated, slow, and annoying.",
+        "Your breath smell like expired Lunchables and broken dreams.",
+        "You're the type of guy to lose a staring contest with your reflection.",
+        "You laugh like a malfunctioning fax machine with asthma.",
+        "You built like a bootleg emoji pack — off-brand and unreadable.",
+        "You got roasted so bad, your mirror submitted a resignation letter.",
+        "You're like an unskippable ad with attitude — no one likes you and you don’t shut up.",
+        "You dress like your wardrobe was sponsored by '404 Error: Style Not Found.'",
+        "You're so irrelevant, even your shadow unfollowed you."
+    ]
+    await ctx.send(
+        f"yo {user.mention},\n"
+        f"{random.choice(packgodVerses)}\n"
+        f"{random.choice(packgodVerses)}\n"
+        f"{random.choice(packgodVerses)}"
+    )
 
 # Run the bot using your token
 bot.run(os.environ['TOKEN'])
