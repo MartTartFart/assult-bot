@@ -73,7 +73,7 @@ async def askPackgod(ctx, *, message):
     if not message.strip():
         await ctx.send("you need to ask a question bru")
     else:
-        ctx.send(file=discord.File('packgod.jpg')
+        ctx.send(file=discord.File("packgod.jpg"))
         responses = [
             'yes', 'no', 'nah', 'FUT NO', 'dumbass question, sybau',
             'js kys', '100%', 'ask me some stupid shit like that again I dare you',
@@ -93,7 +93,7 @@ async def askPackgod(ctx, *, message):
 
 @bot.command()
 async def humbleHim(ctx, user: discord.Member):
-    ctx.send(file=discord.File('packgod.jpg')
+    ctx.send(file=discord.File("packgod.jpg"))
     packgodVerses = [
         "Boy, you built like a failed iOS update — laggy, slow, and nobody wants you!",
         "You talk tough but stutter like your Wi-Fi on 1 bar — sit down, packet loss!",
