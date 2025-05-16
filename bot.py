@@ -11,6 +11,7 @@ load_dotenv()
 # Enable message content intent
 intents = discord.Intents.default()
 intents.message_content = True
+intents.members = True
 
 # Create bot instance
 bot = commands.Bot(command_prefix='!', intents=intents)
