@@ -53,6 +53,10 @@ async def nuke_error(ctx, error):
 async def ezra(ctx):
     await ctx.send(file=discord.File("ezrah.png"))
 
+@bot.command()
+async def jakey(ctx):
+        await ctx.send(file=discord.File("jakey.png"))
+
 # !Jdog - send image
 @bot.command()
 async def Jdog(ctx):
@@ -169,8 +173,6 @@ async def bully(ctx):
     ]
     diss = random.choice(disrespects)
     await ctx.send(f"{victim_choice} {diss}")
-@bot.command()
-async def jakey(ctx):
-        await ctx.send(file=discord.File("jakey.png"))
+
 # Run the bot using your token
 bot.run(os.environ['TOKEN'])
