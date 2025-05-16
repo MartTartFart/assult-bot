@@ -169,6 +169,8 @@ async def bully(ctx):
     ]
     diss = random.choice(disrespects)
     await ctx.send(f"{victim_choice} {diss}")
-
+@bot.command()
+async def jakey(ctx):
+        await ctx.send(file=discord.File("jakey.png"))
 # Run the bot using your token
 bot.run(os.environ['TOKEN'])
