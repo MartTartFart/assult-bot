@@ -177,12 +177,15 @@ async def bully(ctx):
     diss = random.choice(disrespects)
     await ctx.send(f"{victim_choice} {diss}")
 
+# Gemini AI command
 @bot.command()
 async def askAI(ctx, *, message):
     try:
         response = model.generate_content(message)
-        await ctx.send(response.text)  
+        await ctx.send(response.text)
+    except Exception as e:
+        await ctx.send(f"❌ Gemini Error: {e}")
 
-    
-# Run the bot using your token
+# Run the bot
 bot.run(os.environ['TOKEN'])
+
