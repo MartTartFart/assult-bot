@@ -8,7 +8,7 @@ import google.generativeai as genai
 
 # 1. SETUP GEMINI (FREE VERSION)
 genai.configure(api_key=os.getenv("GEMINI_API_KEY"))  # Uses your Railway env variable
-model = genai.GenerativeModel('gemini-pro')  # Free model
+model = genai.GenerativeModel('gemini-2.0-flash')  # Free model
 
 
 # Load .env variables (only needed if you're using a .env file locally)
