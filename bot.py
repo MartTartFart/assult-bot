@@ -5,7 +5,10 @@ import random
 from discord.ext import commands
 from dotenv import load_dotenv
 import google.generativeai as genai
-client = genai.Client(api_key=os.getenv("GEMINI_API_KEY"))
+
+# 1. SETUP GEMINI (FREE VERSION)
+genai.configure(api_key=os.getenv("GEMINI_API_KEY"))  # Uses your Railway env variable
+model = genai.GenerativeModel('gemini-pro')  # Free model
 
 
 # Load .env variables (only needed if you're using a .env file locally)
@@ -179,13 +182,14 @@ async def bully(ctx):
 
 # Gemini AI command
 @bot.command()
-async def askAI(ctx, *, message):
+async def ask(ctx, *, question):
     try:
-        response = model.generate_content(message)
-        await ctx.send(response.text)
+        # Tell Discord "Bot is typing..." (so users know it's working)
+        async with ctx.typing():  
+            response = model.generate_content(question)
+            await ctx.send(response.text[:2000])  # Cuts off at 2000 chars (Discord limit)
     except Exception as e:
-        await ctx.send(f"❌ Gemini Error: {e}")
+        await ctx.send(f"❌ Error: {e}")
 
-# Run the bot
-bot.run(os.environ['TOKEN'])
-
+# 4. RUN THE BOT
+bot.run(os.getenv('TOKEN'))  # Uses Railway's TOKEN variable
