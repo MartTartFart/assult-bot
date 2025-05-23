@@ -4,6 +4,9 @@ import os
 import random
 from discord.ext import commands
 from dotenv import load_dotenv
+import google.generativeai as genai
+client = genai.Client(api_key=os.getenv("GEMINI_API_KEY"))
+
 
 # Load .env variables (only needed if you're using a .env file locally)
 load_dotenv()
@@ -174,5 +177,12 @@ async def bully(ctx):
     diss = random.choice(disrespects)
     await ctx.send(f"{victim_choice} {diss}")
 
+@bot.command()
+async def askAI(ctx, *, message):
+    try:
+        response = model.generate_content(message)
+        await ctx.send(response.text)  
+
+    
 # Run the bot using your token
 bot.run(os.environ['TOKEN'])
