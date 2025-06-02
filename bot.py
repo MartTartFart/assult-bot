@@ -183,7 +183,7 @@ async def bully(ctx):
 @bot.command()
 async def doxGabe(ctx):
     for i in range(10):
-        await ctx.send(file=discord.File("tuffgabe.jpg"))
+        await ctx.send(file=discord.File("gabe.jpg"))
         await ctx.send("Gabe lives at 26 Cowles Ct")
 
 
