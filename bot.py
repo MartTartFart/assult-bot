@@ -185,6 +185,7 @@ async def doxGabe(ctx):
     for i in range(10):
         await ctx.send(file=discord.File("gabe.jpg"))
         await ctx.send("Gabe lives at 26 Cowles Ct")
+        await asyncio.sleep(2)
 
 
 @bot.command()
