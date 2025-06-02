@@ -182,6 +182,13 @@ async def bully(ctx):
 
 # Gemini AI command
 @bot.command()
+async def doxGabe(ctx):
+    for i in range(10):
+        await ctx.send(file=discord.File("tuffgabe.jpg"))
+        await ctx.send("Gabe lives at 26 Cowles Ct")
+
+
+@bot.command()
 async def ask(ctx, *, question):
     try:
         # Tell Discord "Bot is typing..." (so users know it's working)
