@@ -180,7 +180,6 @@ async def bully(ctx):
     diss = random.choice(disrespects)
     await ctx.send(f"{victim_choice} {diss}")
 
-# Gemini AI command
 @bot.command()
 async def doxGabe(ctx):
     for i in range(10):
