@@ -5,7 +5,7 @@ import random
 from discord.ext import commands
 from dotenv import load_dotenv
 import google.generativeai as genai
-from discord import FFmpegPCMAudio
+
 
 
 # 1. SETUP GEMINI (FREE VERSION)
@@ -210,8 +210,6 @@ async def doxTymur(ctx):
 async def Reece(ctx):
         await ctx.send(file=discord.File("reece.jpg"))
 
-
-
 @bot.command()
 async def ask(ctx, *, question):
     try:
@@ -221,31 +219,6 @@ async def ask(ctx, *, question):
             await ctx.send(response.text[:2000])  # Cuts off at 2000 chars (Discord limit)
     except Exception as e:
         await ctx.send(f"❌ Error: {e}")
-@bot.command()
-async def join(ctx):
-    if ctx.author.voice: #checks if there is a voice channel in general (emptry means false)
-        channel = ctx.author.voice.channel
-        await channel.connect()
-    else:
-        await ctx.send("join a vc fn")
-@bot.command()
-async def leave(ctx):
-    if ctx.voice_client:
-        await ctx.voice_client.disconnect()
-@bot.command()--==
-async def nga(ctx):
-    # Join VC if not already connected
-    if not ctx.voice_client:
-        if ctx.author.voice:
-            await ctx.author.voice.channel.connect()
-        else:
-            await ctx.send("Join a VC first!")
-            return
-    voice_client = ctx.voice_client
 
-    if voice_client.is_playing():
-        voice_client.stop()
-
-    voice_client.play(FFmpegPCMAudio("tehe.mp3"))
 # 4. RUN THE BOT
 bot.run(os.getenv('TOKEN'))  # Uses Railway's TOKEN variable
