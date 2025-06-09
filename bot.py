@@ -233,13 +233,20 @@ async def leave(ctx):
     if ctx.voice_client:
         await ctx.voice_client.disconnect()
 @bot.command()
+@bot.command()
 async def nga(ctx):
-    if ctx.voice_client and ctx.voice_client.is_connected():
-        voice_client = ctx.voice_client
-        if voice_client.is_playing():
-            voice_client.stop()
-        voice_client.play(discord.FFmpegPCMAudio("tehe.mp3"))
-    else:
-        await ctx.send("join a vc fn")
+    # Join VC if not already connected
+    if not ctx.voice_client:
+        if ctx.author.voice:
+            await ctx.author.voice.channel.connect()
+        else:
+            await ctx.send("Join a VC first!")
+            return
+    voice_client = ctx.voice_client
+
+    if voice_client.is_playing():
+        voice_client.stop()
+
+    voice_client.play(FFmpegPCMAudio("tehe.mp3"))
 # 4. RUN THE BOT
 bot.run(os.getenv('TOKEN'))  # Uses Railway's TOKEN variable
