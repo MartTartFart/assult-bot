@@ -182,10 +182,32 @@ async def bully(ctx):
 
 @bot.command()
 async def doxGabe(ctx):
-    for i in range(10):
+    for i in range(5):
         await ctx.send(file=discord.File("gabe.jpg"))
         await ctx.send("Gabe lives at 26 Cowles Ct")
         await asyncio.sleep(2)
+@bot.command()
+async def doxAiden(ctx):
+    for i in range(5):
+        await ctx.send(file=discord.File("aiden.jpg"))
+        await ctx.send("Aiden lives at 28 Thorncrest Dr")
+        await asyncio.sleep(2)
+@bot.command()
+async def doxSasha(ctx):
+    for i in range(5):
+        await ctx.send(file=discord.File("sasha.jpg"))
+        await ctx.send("Sasha lives at 287 Bantry ave")
+        await asyncio.sleep(2)
+@bot.command()
+async def doxTymur(ctx):
+    for i in range(5):
+        await ctx.send(file=discord.File("tymur.png"))
+        await ctx.send("Tymur lives at 661 Wellington St West")
+        await asyncio.sleep(2)
+@bot.command()
+async def Reece(ctx):
+        await ctx.send(file=discord.File("reece.jpg"))
+
 
 
 @bot.command()
