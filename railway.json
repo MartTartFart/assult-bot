@@ -3,6 +3,6 @@
     "env": {}
   },
   "deploy": {
-    "startCommand": "./startup.sh"
+    "startCommand": "bash startup.sh"
   }
 }
