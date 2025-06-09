@@ -232,8 +232,7 @@ async def join(ctx):
 async def leave(ctx):
     if ctx.voice_client:
         await ctx.voice_client.disconnect()
-@bot.command()
-@bot.command()
+@bot.command()--==
 async def nga(ctx):
     # Join VC if not already connected
     if not ctx.voice_client:
