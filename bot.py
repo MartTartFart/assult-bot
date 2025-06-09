@@ -5,6 +5,8 @@ import random
 from discord.ext import commands
 from dotenv import load_dotenv
 import google.generativeai as genai
+from discord import FFmpegPCMAudio
+
 
 # 1. SETUP GEMINI (FREE VERSION)
 genai.configure(api_key=os.getenv("GEMINI_API_KEY"))  # Uses your Railway env variable
