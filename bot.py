@@ -220,7 +220,7 @@ async def ask(ctx, *, question):
     except Exception as e:
         await ctx.send(f"❌ Error: {e}")
 @bot.command()
-async def rape(ctx,user: discord.Member,*,):
+async def rape(ctx,user: discord.Member):
     assault_list = [
         "i'm gonna touch you",
         "hey hot shit",
