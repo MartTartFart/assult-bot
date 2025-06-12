@@ -245,10 +245,6 @@ async def SexualAssault(ctx,user: discord.Member,*,message):
     ]
     for i in range(3):
         await user.send(random.choice(assault_list))
-
-async def text(ctx, user: discord.Member, *, message):
-    try:
-        await user.send(message)
-        await ctx.send(f"✅ Message sent to {user.name}!")
+        
                         
 bot.run(os.getenv('TOKEN'))  # Uses Railway's TOKEN variable
