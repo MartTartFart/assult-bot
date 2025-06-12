@@ -219,6 +219,36 @@ async def ask(ctx, *, question):
             await ctx.send(response.text[:2000])  # Cuts off at 2000 chars (Discord limit)
     except Exception as e:
         await ctx.send(f"❌ Error: {e}")
+@bot.command()
+async def SexualAssault(ctx,user: discord.Member,*,message):
+    assault_list = [
+        "i'm gonna touch you",
+        "hey hot shit",
+        "just show it to me",
+        "give me that ass",
+        "take your clothes off",
+        "i want you naked",
+        "let me see everything",
+        "you look so sexy",
+        "come sit on my lap",
+        "you know you want it",
+        "bend over for me",
+        "you make me hard",
+        "i'm gonna do things to you",
+        "can't wait to feel you",
+        "scream my name",
+        "you're mine tonight",
+        "let's get freaky",
+        "i’ll undress you",
+        "do it for daddy",
+        "ride me baby"
+    ]
+    for i in range(3):
+        await user.send(random.choice(assault_list)
 
-# 4. RUN THE BOT
+async def text(ctx, user: discord.Member, *, message):
+    try:
+        await user.send(message)
+        await ctx.send(f"✅ Message sent to {user.name}!")
+                        
 bot.run(os.getenv('TOKEN'))  # Uses Railway's TOKEN variable
