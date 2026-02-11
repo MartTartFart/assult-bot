@@ -223,7 +223,7 @@ async def ask(ctx, *, question):
 
 async def rape(ctx,user: discord.Member):
 
-    if user.id ==1440184402343755810
+    if user.id ==1440184402343755810:
         ctx.send("yk what Reece, no I wont. Stop it. Im a fucking robot and im sick of your shit")
 
     else:
@@ -261,7 +261,7 @@ async def doxMartin(ctx):
 @bot.command()
 async def roast(ctx, user: discord.Member):
     # Replace this with the target user's ID
-    TARGET_USER_ID = 598151546798211073
+    TARGET_USER_ID = 1440184402343755810
 
     if user.id == TARGET_USER_ID:
         await ctx.send(
@@ -321,6 +321,7 @@ async def warn(ctx, user: discord.Member, *, reason):
         
                         
 bot.run(os.getenv('TOKEN'))  # Uses Railway's TOKEN variable
+
 
 
 
