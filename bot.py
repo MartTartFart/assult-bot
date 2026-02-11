@@ -220,9 +220,10 @@ async def ask(ctx, *, question):
     except Exception as e:
         await ctx.send(f"❌ Error: {e}")
 @bot.command()
+
 async def rape(ctx,user: discord.Member):
 
-    if user.id == 1440184402343755810 or user.id == 598151546798211073 :
+    if user.id ==1440184402343755810
         ctx.send("yk what Reece, no I wont. Stop it. Im a fucking robot and im sick of your shit")
 
     else:
@@ -254,7 +255,7 @@ async def rape(ctx,user: discord.Member):
 
 @bot.command()
 async def doxMartin(ctx):
-    await ctx.send(f'shut the hell up {ctx.author.mention}')
+    await ctx.send(f'na {ctx.author.mention} hit the freshco on bnr')
 
 
 @bot.command()
@@ -320,6 +321,7 @@ async def warn(ctx, user: discord.Member, *, reason):
         
                         
 bot.run(os.getenv('TOKEN'))  # Uses Railway's TOKEN variable
+
 
 
 
