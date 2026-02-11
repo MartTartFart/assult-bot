@@ -221,30 +221,105 @@ async def ask(ctx, *, question):
         await ctx.send(f"❌ Error: {e}")
 @bot.command()
 async def rape(ctx,user: discord.Member):
-    assault_list = [
-        "i'm gonna touch you",
-        "hey hot shit",
-        "just show it to me",
-        "give me that ass",
-        "take your clothes off",
-        "i want you naked",
-        "let me see everything",
-        "you look so sexy",
-        "come sit on my lap",
-        "you know you want it",
-        "bend over for me",
-        "you make me hard",
-        "i'm gonna do things to you",
-        "can't wait to feel you",
-        "scream my name",
-        "you're mine tonight",
-        "let's get freaky",
-        "i’ll undress you",
-        "do it for daddy",
-        "ride me baby"
+
+    if user.id == 1440184402343755810 or user.id == 598151546798211073 :
+        ctx.send("yk what Reece, no I wont. Stop it. Im a fucking robot and im sick of your shit")
+
+    else:
+        assault_list = [
+            "i'm gonna touch you",
+            "hey hot shit",
+            "just show it to me",
+            "give me that ass",
+            "take your clothes off",
+            "i want you naked",
+            "let me see everything",
+            "you look so sexy",
+            "come sit on my lap",
+            "you know you want it",
+            "bend over for me",
+            "you make me hard",
+            "i'm gonna do things to you",
+            "can't wait to feel you",
+            "scream my name",
+            "you're mine tonight",
+            "let's get freaky",
+            "i’ll undress you",
+            "do it for daddy",
+            "ride me baby",
+            "your gonna feel my reecie peecie."
+        ]
+        for i in range(3):
+            await user.send(random.choice(assault_list))
+
+@bot.command()
+async def doxMartin(ctx):
+    await ctx.send(f'shut the hell up {ctx.author.mention}')
+
+
+@bot.command()
+async def roast(ctx, user: discord.Member):
+    # Replace this with the target user's ID
+    TARGET_USER_ID = 598151546798211073
+
+    if user.id == TARGET_USER_ID:
+        await ctx.send(
+            f"shut the fuck up {ctx.author.mention} your a stupid crybaby bitch"
+        )
+    else:
+        await ctx.send(
+            f"{user.mention} your a nonsense glorb patrick diddy blud poo poo face"
+        )
+
+
+@bot.command()
+async def doxCam(ctx):
+    for i in range(10):
+        await ctx.send(file=discord.File("camerone.jpg"))
+        await ctx.send("Cameron Patrick Smith lives at 22 Mossgrove Street")
+
+
+
+@bot.command()
+async def warn(ctx, user: discord.Member, *, reason):
+    warnings = [
+        "pipe down retigga dont do that again", "jrm atp", "shut the fuck up",
+        "stfu", "you're a fucking idiot", "literal glorb over here trying ts",
+        "stop bro", "fuck off retard", "STOOOOOP DOING TS",
+        "istg im gonna fucking destroy you", "6 foot metal pole in the ass",
+        "whore",
+        "*haugh PEW* thats the sound of me spitting on your stupid fucking ass",
+        "reece is smarter then you                 gng",
+        "STOP you are currently dissobeying the rules of this server lol ok fuck you",
+        "fuck you", "nibber fuck off",
+        "Yo, you slobbering fuckwaffle, whatever dumbass thing you just did, cut it out or I’ll                 digitally tar and feather your sorry ass!",
+        "Listen up, you rancid shitnugget, stop being a walking disaster in this server or I’ll                 yeet you into a black hole of your own stupidity!",
+        "Hey, you brain-dead cockgoblin, quit fucking up everything you touch or I’ll make you                 the poster child for natural selection!",
+        "You absolute dumpster-diving asshat, cease your pathetic existence in this chat or I’ll                 ban you to a server full of dial-up modems!",
+        "Oi, you sniveling turdweasel, stop acting like a sentient landfill or I’ll roast you so                 hard your Wi-Fi will disconnect in shame!",
+        "What the hell, you dribbling fuckclown, quit being a universal embarrassment or I’ll                 demote you to the server’s official court jester!",
+        "You crusty dickwaffle, stop shitting the bed with every move you make or I’ll fling you                 into a chatroom of infinite spam bots!",
+        "Hey, you pus-oozing shitferret, quit being a colossal fuck-up or I’ll make your username                 synonymous with ‘catastrophic failure’!",
+        "You blithering cocknozzle, stop existing so loudly in this server or I’ll exile you to a             void where even bots won’t talk to you!",
+        "For fuck’s sake, you gibbering assmonkey, quit being the human equivalent of a 404 error                 or I’ll delete you faster than a bad tweet!"
     ]
-    for i in range(3):
-        await user.send(random.choice(assault_list))
+    randomWarning = random.choice(warnings)
+    if reason == "being racist":
+        await ctx.send(
+            f"{user.mention} you are a fucking racist piece of shit and you need to stop"
+        )
+    elif reason == "dissing phase clan":
+        await ctx.send(
+            f"{user.mention} you are a fucking piece of shit and you need to stop dissing phase clan"
+        )
+    elif reason == "dissing reece":
+        await ctx.send("You have NOTHING on reef. NOTHING")
+    else:
+        await ctx.send(f"{user.mention} did ts ({reason}) {randomWarning}")
+
         
                         
 bot.run(os.getenv('TOKEN'))  # Uses Railway's TOKEN variable
+
+
+
